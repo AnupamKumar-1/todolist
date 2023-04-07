@@ -129,7 +129,8 @@ input:focus {
 /* task list */
 ul {
     display: block;
-    padding-right: 20px;
+    padding: 0px;
+    list-style : none;
 
 }
 /* styling list    */
