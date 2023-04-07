@@ -75,9 +75,16 @@ function createList(task) {
     let li = document.createElement('li')
     li.innerHTML = `
     
+   <div class = 'list'>
+    <div class = 'check'>
     <input type="checkbox" class="taskCheckbox" id = "${task.id}" ${task.completed ? 'checked' : ''} >
+    </div>
+    <div class = 'checklabel'>
     <label for ="${task.id}" class="tasks"> ${task.input}</label>
+    </div>
+    <div class = 'checkdelete'>
     <img src="resources/2.svg" id="${task.id}" class="del" " >
+    </div>
 
     `;
     // appending tasks to list
