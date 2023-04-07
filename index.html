@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ToDo List
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheet (- style.css) -->
+    <link rel="Stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- creating  app screen  starts-->
+    <div class="app-screen">
+        <div id="task-input" class="type-task">
+
+            <!-- svg placed inside user input box  -->
+
+            <img id="img1" src="resources/1.svg">
+
+            <!-- creating user input box -->
+
+            <input type="text" id="input-task" placeholder=" Add a task..." required>
+
+            <!-- Add task button inside user input box -->
+            <button id="new-task-add">+ task</button>
+        </div>
+
+        <div id="task-action">
+            <div id="task-complete">
+                <div>
+                    <img id="img2" src="resources/tick.png">
+                </div>
+                <!-- to check all checkboxes -->
+
+                <div id="all-task-check" class="allChecked">
+                    Complete all tasks
+                </div>
+            </div>
+
+            <!-- to delete completed tasks -->
+
+            <div id="clear-completed" class="ClearAllChecked">Clear completed</div>
+        </div>
+        <ul id="ul-group">
+        </ul>
+
+        <!-- display task status -->
+
+        <div id="task-status">
+            <div id="task-count">
+                <div id="total-tasks">empty</div>
+            </div>
+            <div id="action-2">
+                <span id="all"> all</span>
+                <span id="pending">pending</span>
+                <span id="completed">completed</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- app screen ends -->
+
+    <!-- Javascript file (- script.js) -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
