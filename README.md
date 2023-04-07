@@ -3,7 +3,7 @@
 
 ![Screenshot ](https://github.com/AnupamKumar-1/todo-list/blob/main/ToDo%20list/resources/Screenshot.png)
 ### language and tool
-![html ](https://github.com/AnupamKumar-1/todo-list/blob/main/ToDo%20list/resources/html.png)
-![css ](https://github.com/AnupamKumar-1/todo-list/blob/main/ToDo%20list/resources/css.png)
-![javascript ](https://github.com/AnupamKumar-1/todo-list/blob/main/ToDo%20list/resources/js.png)
-![vscode ](https://github.com/AnupamKumar-1/todo-list/blob/main/ToDo%20list/resources/vscode.png)
+![html ](https://github.com/AnupamKumar-1/todolist/blob/main/resources/html.png)
+![css ](https://github.com/AnupamKumar-1/todolist/blob/main/resources/css.png)
+![javascript ](https://github.com/AnupamKumar-1/todolist/blob/main/resources/js.png)
+![vscode ](https://github.com/AnupamKumar-1/todolist/blob/main/resources/vscode.png)
