@@ -129,21 +129,39 @@ input:focus {
 /* task list */
 ul {
     display: block;
-    padding: 0px;
-    list-style : none;
+    padding-right: 0px;
+    padding-left: 0%;
 
 }
 /* styling list    */
 li {
     list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
     font-weight: bold;
 
 }
+.list{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
 
+.check{
+    
+    padding-left : 0px;
+    width : 10%;
+    padding-top : 2px;
+
+}
+.checklabel{
+    padding-left : 10px;
+    width:80%;
+    padding-top : 5px;
+}
+ .checkdelete{
+    padding-right: 0px;
+    width : 10%;
+    padding-top : 5px;
+ }
 /* showing border on mouse hover */
 li:hover {
     border-top: 1px solid whitesmoke;
@@ -151,7 +169,6 @@ li:hover {
 }
 /* Styling task  */
 .tasks {
-    display: flex;
     position: absolute;
     color: red;
     font-size: large;
@@ -192,8 +209,6 @@ input[type=checkbox]:checked+.tasks {
 
 li:hover img {
     visibility: visible;
-
-
 }
 
 /* task status section */
@@ -252,32 +267,37 @@ img {
 @media screen and (max-width: 650px) {
     .app-screen {
         display: block;
-        width: 96%;
+        width: 80%;
         border-radius: 12px;
         box-shadow: 10px 10px 10px 10px lightgray;
         background-color: #131c50;
         overflow: hidden;
     }
-    
-     ul {
-        display: block;
-        padding: 0px;
-        list-style : none;
-        font-size : smaller;
-    
+    .tasks {
+        position: absolute;
+        color: red;
+        font-size: medium;
+        padding-top: 1.1%;
     }
 
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 410px) {
 
     .app-screen {
         display: block;
-        width: 96%;
+        width: 80%;
         border-radius: 12px;
         box-shadow: 10px 10px 10px 10px lightgray;
         background-color: #131c50;
         overflow: hidden;
+    }
+
+    .tasks {
+        position: absolute;
+        color: red;
+        font-size: smaller;
+        padding-top: 2%;
     }
 
     #task-action {
@@ -286,13 +306,6 @@ img {
         padding: 8px;
         color: white;
         font-size: smaller;
-    }
-        ul {
-        display: block;
-        padding: 0px;
-        list-style : none;
-        font-size : smaller;
-    
     }
 
 }
