@@ -252,20 +252,28 @@ img {
 @media screen and (max-width: 650px) {
     .app-screen {
         display: block;
-        width: 80%;
+        width: 96%;
         border-radius: 12px;
         box-shadow: 10px 10px 10px 10px lightgray;
         background-color: #131c50;
         overflow: hidden;
     }
+    
+     ul {
+        display: block;
+        padding: 0px;
+        list-style : none;
+        font-size : smaller;
+    
+    }
 
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 510px) {
 
     .app-screen {
         display: block;
-        width: 80%;
+        width: 96%;
         border-radius: 12px;
         box-shadow: 10px 10px 10px 10px lightgray;
         background-color: #131c50;
@@ -278,6 +286,13 @@ img {
         padding: 8px;
         color: white;
         font-size: smaller;
+    }
+        ul {
+        display: block;
+        padding: 0px;
+        list-style : none;
+        font-size : smaller;
+    
     }
 
 }
