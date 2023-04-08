@@ -190,7 +190,7 @@ input[type="checkbox"] {
 
 /* customizing checkbox label at checked condition */
 
-input[type=checkbox]:checked+ .checklabel {
+input[type=checkbox]:checked+.checklabel {
     text-decoration: line-through;
     font-style: italic;
     color: green;
