@@ -2,10 +2,20 @@
 let tasklist = [];
 
 // getting html elements
-
 let input = document.getElementById('input-task');
 let addTask = document.getElementById('new-task-add');
 let todolist = document.getElementById('ul-group');
+
+// Load data from local storage if available
+const storedTasklist = localStorage.getItem('tasklist');
+if (storedTasklist) {
+    try {
+        tasklist = JSON.parse(storedTasklist);
+        showTasks();
+    } catch (error) {
+        console.error('Error parsing data from local storage:', error);
+    }
+}
 
 // getting input by ckicking on add task button.
 
@@ -45,15 +55,21 @@ function addNewTask(e) {
 
 };
 
-// Adding task
+// Function to update local storage
+function updateLocalStorage() {
+    localStorage.setItem('tasklist', JSON.stringify(tasklist));
+}
 
+// Adding task
 function createToDo(task) {
     if (task) {
         tasklist.push(task);
         showTasks();
+        updateLocalStorage(); // Save data to local storage
         return;
     }
-};
+}
+
 
 // rendering list to update tasks
 
@@ -138,45 +154,37 @@ function taskStatus() {
 
 
 // Adding click functions
-
 document.addEventListener('click', clickAction);
 function clickAction(e) {
-   let target = e.target;
+    let target = e.target;
     let idNumber = target.id;
-
     // deleting a particular list by clicking on icon.
-
-    if (target.className == 'del') {
-       let deleteTask = tasklist.findIndex(item => item.id == idNumber);
-        tasklist.splice(deleteTask, 1);
+if (target.className == 'del') {
+    let deleteTaskIndex = tasklist.findIndex(item => item.id == idNumber);
+    if (deleteTaskIndex !== -1) {
+        tasklist.splice(deleteTaskIndex, 1);
         showTasks();
-        return;
+        updateLocalStorage(); // Save data to local storage
     }
-
-    // completing a single task.
-
-    if (target.className == 'taskCheckbox') {
-       let task = tasklist.filter(function (task) {
-            return task.id == idNumber;
-        });
-        if (task.length > 0) {
-           let taskNew = task[0];
-            taskNew.completed = !taskNew.completed;
-            showTasks();
-        }
+    return;
+}
+   // Completing a single task.
+if (target.className == 'taskCheckbox') {
+    let taskIndex = tasklist.findIndex(task => task.id == idNumber);
+    if (taskIndex !== -1) {
+        tasklist[taskIndex].completed = !tasklist[taskIndex].completed;
         showTasks();
-        return;
+        updateLocalStorage(); // Save data to local storage
     }
-    // deleting all completed tasks.
+    return;
+}
 
-    if (target.className == 'ClearAllChecked') {
-       let task = tasklist.filter(function (task) {
-            return task.completed !== true;
-        });
-        tasklist = task;
-        showTasks();
-
-    }
+// Deleting all completed tasks.
+if (target.className == 'ClearAllChecked') {
+    tasklist = tasklist.filter(task => !task.completed);
+    showTasks();
+    updateLocalStorage(); // Save data to local storage
+}
 
     // Checking all checkboxes and marking all tasks as completed.
 
@@ -186,6 +194,7 @@ function clickAction(e) {
        }
      
     }
+     updateLocalStorage();
 
 }
 
